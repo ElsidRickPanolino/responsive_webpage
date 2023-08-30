@@ -11,9 +11,11 @@
     --Gr_6: linear-gradient(90deg, #d53369 0%, #daae51 100%);
 
     --Glass: linear-gradient(45deg, #00000019 0%, #00000010 100%);
-
-    --px_100: 100px;
-    --px_200: 200px;
+    
+    --length_1: 120px;
+    --length_1_reserve: 120px;
+    
+    --length_2: 100px;
 
     --item_border_radius: 10px;
     
@@ -76,15 +78,15 @@
     box-sizing: border-box;
 
     display: grid;
-    grid-template-columns: repeat(4, var(--px_200));
-    grid-template-columns: repeat(4, var(--px_200));
+    grid-template-columns: repeat(5, var(--length_1));
+    grid-template-columns: repeat(5, var(--length_1));
     gap: 10px;
 
     justify-content: center;
     align-content: center;
 }
 .item{
-    height: var(--px_200);
+    height: var(--length_1);
     background-color: #aaaaaa4e;
     border-radius: var(--item_border_radius);
     box-shadow: 2px 2px 3px 2px #44444444;
@@ -119,19 +121,19 @@
 /* Change item sizes */
 @media screen and (max-width: 960px) {
     :root{
-        --px_200: 150px;
+        --length_1: calc(var(--length_1_reserve)*0.75);
         --item_border_radius: 7px;
     }
 }
 @media screen and (max-width: 700px) {
     :root{
-        --px_200: 100px;
+        --length_1:calc(var(--length_1_reserve)*0.5);
         --item_border_radius: 5px;
     }
 }
 @media screen and (max-width: 480px) {
     :root{
-        --px_200: 60px;
+        --length_1: calc(var(--length_1_reserve)*0.275);
         --item_border_radius: 3px;
     }
     .content{
